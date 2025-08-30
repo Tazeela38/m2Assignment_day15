@@ -1,0 +1,29 @@
+### Create student (valid)
+POST http://localhost:3000/api/add-student
+Content-Type: application/json
+
+{
+  "name": "Shifa A. Zafar",
+  "email": "shifa@example.com",
+  "course": "Computer Science"
+}
+
+### Missing/short name (invalid)
+POST http://localhost:3000/api/add-student
+Content-Type: application/json
+
+{
+  "name": "Al",
+  "email": "al@example.com",
+  "course": "IT"
+}
+
+### Duplicate email (invalid after first request)
+POST http://localhost:3000/api/add-student
+Content-Type: application/json
+
+{
+  "name": "Another User",
+  "email": "shifa@example.com",
+  "course": "IT"
+}
